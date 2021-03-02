@@ -1,0 +1,88 @@
+.header{
+    /*width: 70%;*/
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.header select{
+    width: 50%;
+}
+.header option{
+    font-size: 14px;
+}
+.header__title-icon{
+    color: darkred;
+    letter-spacing: 4px;
+    margin-left: 10px;
+}
+.header__country-selector{
+    /*background-color: green;*/
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 0px;
+}
+.header__country-selector__dropdown{
+    margin-left: 10px;
+    border: none;
+    padding: 5px;
+    background-color: gainsboro;
+    font-size: 14px;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /*width: 74%;*/
+    padding: 0px 5px;
+}
+
+.main__map-container{
+    height: 500px;
+    width: 100%;
+    margin: 20px 0px;
+    padding: 15px;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    background: white;
+}
+
+.sidebar{
+    background-color: white;
+    border: 1px solid rgb(196, 196, 196);
+    padding: 0px;
+    /*position: fixed;*/
+    top: 4px;
+    /*left: 75%;*/
+    /*width: 25%;*/
+    /*height: 98%;*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    margin: 0px;
+    border-collapse: collapse;
+}
+th{
+    padding: 12px 0px;
+    border: 1px solid rgb(196, 196, 196);
+}
+td{
+    padding: 5px 0px;
+    border: 1px solid rgb(196, 196, 196);
+    border-left: none;
+}
+tr:nth-child(even){
+    background-color: gainsboro;
+}
+tr:hover{
+    background-color: rgb(196, 196, 196);
+    color: white;
+}

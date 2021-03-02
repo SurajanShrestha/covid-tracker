@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState,useEffect} from 'react';
+import Home from './Home';
 
 function App() {
+  const [countriesList,setCountriesList]=useState([]);
+  const [mapCountries,setMapCountries]=useState([]);
+  
+  useEffect(()=>{
+        fetch('https://disease.sh/v3/covid-19/countries')
+        .then(response=>response.json())
+        .then((jsonResponse)=>{
+          console.log(jsonResponse);
+            setMapCountries(jsonResponse);
+            var countries=jsonResponse.map((item)=>item.country);
+            //setCountriesList([...countriesList,countries]);
+            setCountriesList(countries);
+        },(error)=>console.log(error));
+    },[]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Home countriesList={countriesList} mapCountries={mapCountries} />
     </div>
-  );
+  )
 }
 
 export default App;
